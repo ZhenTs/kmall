@@ -5,19 +5,21 @@
  */
 import React, {Component} from 'react';
 import {DeviceEventEmitter, Text, TouchableOpacity, View} from 'react-native';
-import NavigatorBar from '../components/custom/NavigatorBar';
+import NavigatorBar from '../custom/NavigatorBar';
 
 interface NavigatorProps {
   title: string;
 }
 
-export default class BaseContainer extends Component {
+export default class BaseComponent extends Component {
   state = {
     isError: false,
     erroMsg: '网络异常',
     tabIndex: 0,
   };
-  navigatorProps: NavigatorProps = {};
+  navigatorProps: NavigatorProps = {
+    title: '张三',
+  };
 
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ export default class BaseContainer extends Component {
         {this.navigatorProps.title &&
           this._renderNavigator(this.navigatorProps)}
         {this.state.isError && this._renderErrorPage()}
-        {!this.state.isError && this._renderContainer()}
+        {!this.state.isError && this._render()}
       </View>
     );
   }

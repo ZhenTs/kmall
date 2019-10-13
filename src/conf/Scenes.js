@@ -14,10 +14,11 @@ import {
   Scene,
   Stack,
 } from 'react-native-router-flux';
-import TabIcon from '../../components/custom/TabIcon';
-import BaseStyles from '../../styles/BaseStyle';
-import Scenes from '../../module';
-import HomePage from '../../module/home/pages/HomePage'
+import TabIcon from '../components/custom/TabIcon';
+import BaseStyles from '../styles/BaseStyle';
+import Scenes from '../module';
+import TabScenes from '../module/TabScenes';
+import MainContainer from '../containers/MainContainer';
 
 function initStatusBar() {
   if (Actions.currentScene === '_mine') {
@@ -47,13 +48,27 @@ export default () => {
                 borderTopColor: BaseStyles.colors.sperate,
                 backgroundColor: BaseStyles.colors.white,
               }}>
-              {Scenes.map(item => {
+              {TabScenes.map(item => {
                 return getTabScene(item);
               })}
             </Scene>
+            {/*所有页面 */}
+            {Scenes.map(item => {
+              return (
+                <Scene
+                  key={item.key}
+                  module={item.module}
+                  title={item.title}
+                  component={item.component}
+                  onEnter={() => initStatusBar()}
+                />
+              );
+            })}
           </Stack>
         </Lightbox>
       </Modal>
+      {/* 全局顶层组件(redux) */}
+      <Scene component={MainContainer} onEnter={() => initStatusBar()} />
     </Overlay>
   );
 };

@@ -76,7 +76,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js",
+    entryFile: "Scenes.js",
     enableHermes: false,  // clean and rebuild if changing
 ]
 

@@ -6,7 +6,23 @@
 import React from 'react';
 import {Alert, BackHandler} from 'react-native';
 import {Actions, Router} from 'react-native-router-flux';
-import Scenes from '../conf/scenes';
+import Scenes from '../conf/Scenes';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import actions from '../redux/Actions';
+
+const RouterWithRedux = connect(
+  function(state) {
+    return {
+      routes: Actions,
+    };
+  },
+  function(dispatch) {
+    return {
+      actions: bindActionCreators(actions, dispatch),
+    };
+  },
+)(Router);
 
 export default class AppContainer extends React.Component {
   componentDidMount() {}
@@ -14,7 +30,11 @@ export default class AppContainer extends React.Component {
   componentWillUnmount() {}
 
   render() {
-    return <Router>{Scenes()}</Router>;
+    return (
+      <RouterWithRedux backAndroidHandler={this._onBack}>
+        {Scenes()}
+      </RouterWithRedux>
+    );
   }
 
   _onBack = () => {

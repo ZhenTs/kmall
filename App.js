@@ -13,6 +13,7 @@ import './src/common/GlobalException';
 import SplashScreen from 'react-native-splash-screen';
 // 引入Redux
 import {Provider} from 'react-redux';
+import configureStore from './src/redux/ConfigureStore';
 // 运行环境去掉日志
 if (!__DEV__) {
   global.console = {
@@ -36,8 +37,11 @@ export default class AppRoot extends Component {
   }
 
   render() {
+    const store = configureStore({});
     return (
+      <Provider store={store}>
         <AppContainer />
+      </Provider>
     );
   }
 }

@@ -1,3 +1,3 @@
-import HomeScenes from './home/scenes';
+import HomeScenes from './home';
 
 export default [].concat(HomeScenes);

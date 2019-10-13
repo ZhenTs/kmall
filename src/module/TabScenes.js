@@ -1,5 +1,5 @@
-import TabImages from '../../conf/resources/client/TabImages';
-import {HomePage, HomePage2} from './pages';
+import TabImages from '../conf/resources/client/TabImages';
+import {HomePage, HomePage2} from './home/pages';
 
 export default [
   {
