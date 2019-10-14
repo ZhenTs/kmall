@@ -124,7 +124,7 @@ class NavigatorBar extends React.Component {
       return this._renderRightButtons();
     }
     let rightContainer = null;
-    let {
+    const {
       rightButtonImage,
       rightButtonOnPress,
       rightButtonText,
@@ -159,10 +159,10 @@ class NavigatorBar extends React.Component {
   };
 
   _renderRightButtons = () => {
-    let rightContainer = [];
+    const rightContainer = [];
     this.props.rightButtons.map((item, index) => {
-      let {img, onPress, text, textStyle, imgStyle, brage} = item;
-      let btnStyle = {};
+      const {img, onPress, text, textStyle, imgStyle, brage} = item;
+      const btnStyle = {};
       if (text && !img) {
         rightContainer.push(
           <NavigatorText

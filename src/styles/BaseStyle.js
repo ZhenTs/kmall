@@ -296,10 +296,10 @@ export default class BaseStyle extends StyleVariable {
         backgroundColor: this.colors.background,
         position: 'absolute',
         zIndex: 1000,
-        top: Platform.OS == 'ios' ? 64 : 69,
+        top: Platform.OS === 'ios' ? 64 : 69,
         left: 0,
         right: 0,
-        height: Platform.OS == 'ios' ? winHeight - 64 : winHeight - 69,
+        height: Platform.OS === 'ios' ? winHeight - 64 : winHeight - 69,
         ...this.centerFlex,
       },
     };

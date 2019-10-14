@@ -17,13 +17,10 @@ export default class BaseComponent extends Component {
     erroMsg: '网络异常',
     tabIndex: 0,
   };
+
   navigatorProps: NavigatorProps = {
     title: '张三',
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this._onLoadData();
@@ -79,13 +76,14 @@ export default class BaseComponent extends Component {
 
   // 异常页面重新加载操作
   _onErrorPageRefresh = err => {
+    console.log(err);
     this.setState({isError: false});
     this._onLoadData();
   };
 
   // 设置缺省页面状态
   _onErrorPage = flag => {
-    if (this.token != flag.token) {
+    if (this.token !== flag.token) {
       return null;
     }
     this.setState({

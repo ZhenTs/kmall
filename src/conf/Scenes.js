@@ -7,7 +7,6 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import {
   Actions,
-  Drawer,
   Lightbox,
   Modal,
   Overlay,
@@ -51,7 +50,7 @@ export default () => {
                 return getTabScene(item);
               })}
             </Scene>
-            {/*所有页面 */}
+            {/* 所有页面 */}
             {ModuleScenes.map(item => {
               return (
                 <Scene
@@ -74,7 +73,7 @@ export default () => {
 
 // 获取tab组件Scene
 function getTabScene(item) {
-  let isInitScene = {};
+  const isInitScene = {};
   isInitScene.initial = true;
   return (
     <Scene

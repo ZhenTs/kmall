@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import BaseContainer from '../../../components/base/BaseComponent';
 import HttpUtil from '../../../utils/base/HttpUtil';

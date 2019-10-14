@@ -1,5 +1,5 @@
 /**
- * 馋娃娃APP入口
+ * APP入口
  */
 
 import React, {Component} from 'react';

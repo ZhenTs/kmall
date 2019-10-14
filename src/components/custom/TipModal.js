@@ -2,7 +2,7 @@
  * 配合redux的全局弹窗组件
  */
 import React from 'react';
-import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import ConnectComponent from '../../redux/ConnectComponent';
 
 class LayoutContainer extends React.Component {
@@ -23,9 +23,7 @@ class LayoutContainer extends React.Component {
         animationType={'slide'}
         transparent={true}
         visible={this.state.modalVisible}
-        onRequestClose={() => {
-          alert('Modal has been closed.');
-        }}>
+        onRequestClose={() => {}}>
         <View
           style={{
             flex: 1,
@@ -64,30 +62,6 @@ class LayoutContainer extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,.2)',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 export function mapStateToProps(state) {
   return {

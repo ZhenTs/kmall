@@ -3,6 +3,10 @@ module.exports = {
   env: {
     es6: true,
   },
+  globals: {
+    __DEV__: true,
+    ErrorUtils: true,
+  },
   extends: [
     'standard',
     'prettier',
@@ -18,6 +22,7 @@ module.exports = {
     },
   },
   rules: {
+    __DEV__: 0,
     'react/display-name': 0,
     'react/jsx-boolean-value': 0,
     'react/jsx-no-comment-textnodes': 1,

@@ -14,13 +14,13 @@ export default class MainContainer extends React.Component {
   render() {
     return (
       <View>
-        {/*吐司提示*/}
+        {/* 吐司提示 */}
         <ToastView />
-        {/*敬请期待*/}
+        {/* 敬请期待 */}
         <TipModal />
-        {/*全局遮罩Loading*/}
+        {/* 全局遮罩Loading */}
         <MaskView />
-        {/*消息提醒*/}
+        {/* 消息提醒 */}
         <MessageTip />
       </View>
     );
