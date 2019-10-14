@@ -30,7 +30,7 @@ class LayoutContainer extends Component {
     return (
       <Modal transparent={true} visible={this.state.isShow}>
         <View style={styles.maskStyle}>
-          <ActivityIndicator size="large" color="#a7a7a7" />
+          <ActivityIndicator size='large' color='#a7a7a7' />
         </View>
       </Modal>
     );

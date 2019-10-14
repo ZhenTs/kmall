@@ -169,7 +169,5 @@ global.Utils = {
       }
     });
   },
-  getRefreshUserInfo: (callback, actions) => {
-
-  },
+  getRefreshUserInfo: (callback, actions) => {},
 };

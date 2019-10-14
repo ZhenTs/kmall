@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import BaseStyle from '../../styles/BaseStyle';
-import BaseImages from '../../conf/resources/BaseImages';
+import {NavigatorBarImages} from '../../images/components/custom';
 import {ifIphoneX} from '../../utils/base/PlatformUtil';
 
 const propTypes = {
@@ -78,7 +78,7 @@ class NavigatorBar extends React.Component {
       leftBtnImgStyle,
     } = this.props;
     if (this.props.leftButtonIsBack && !leftButtonImage && !leftButtonText) {
-      leftButtonImage = BaseImages.nav_back;
+      leftButtonImage = NavigatorBarImages.nav_back;
     }
     if (leftButtonText && !leftButtonImage) {
       leftContainer = (
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     backgroundColor: BaseStyle.colors.white,
     flexDirection: 'row',
     alignItems: 'center',
-    zIndex:999,
+    zIndex: 999,
   },
   titleT: {
     color: BaseStyle.colors.main,

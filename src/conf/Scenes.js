@@ -16,8 +16,7 @@ import {
 } from 'react-native-router-flux';
 import TabIcon from '../components/custom/TabIcon';
 import BaseStyles from '../styles/BaseStyle';
-import Scenes from '../module';
-import TabScenes from '../module/TabScenes';
+import {TabScenes, ModuleScenes} from '../module';
 import MainContainer from '../containers/MainContainer';
 
 function initStatusBar() {
@@ -33,17 +32,17 @@ function initStatusBar() {
 
 export default () => {
   return (
-    <Overlay key="overlay">
-      <Modal key="modal" hideNavBar>
-        <Lightbox key="lightbox">
-          <Stack key="root" hideNavBar={true}>
+    <Overlay key='overlay'>
+      <Modal key='modal' hideNavBar>
+        <Lightbox key='lightbox'>
+          <Stack key='root' hideNavBar={true}>
             <Scene
-              key="tabbar"
+              key='tabbar'
               tabs={true}
               activeTintColor={BaseStyles.colors.primary}
               inactiveTintColor={BaseStyles.colors.summary}
               tabStyle={{marginBottom: 4}}
-              tabBarPosition="bottom"
+              tabBarPosition='bottom'
               tabBarStyle={{
                 borderTopColor: BaseStyles.colors.sperate,
                 backgroundColor: BaseStyles.colors.white,
@@ -53,7 +52,7 @@ export default () => {
               })}
             </Scene>
             {/*所有页面 */}
-            {Scenes.map(item => {
+            {ModuleScenes.map(item => {
               return (
                 <Scene
                   key={item.key}
